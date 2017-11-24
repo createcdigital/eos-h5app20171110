@@ -761,6 +761,9 @@ app.p21.init = function(){
         $(".p21 .e-10").css('display','block');
     }
     setTimeout(show21,3000);
+    //是否玩过游戏
+    localStorage.setItem("IsPlayed", "true");
+    app.ShareOp();
 };
 app.p21.bind_touch_event = function(){
     $(".p21 .btn-1").on("touchend", function(){
@@ -771,7 +774,6 @@ app.p21.bind_touch_event = function(){
     $(".p21 .btn-3").on("touchend", function(){
         window.location.href="http://yhg111.ren/iDif98";
     });
-
 };
 app.p21.destory = function(){
     var aar = ["img/p2/e-1.png",
@@ -789,6 +791,8 @@ app.p22.init = function(){
         $(".p22 .e-10").css('display','block');
     }
     setTimeout(show21,3000);
+    //是否玩过游戏
+    localStorage.setItem("IsPlayed", "true");
 };
 app.p22.bind_touch_event = function(){
     $(".p22 .btn-1").on("touchend", function(){
@@ -816,6 +820,8 @@ app.p23.init = function(){
         $(".p23 .e-8").css('display','block');
     }
     setTimeout(show23,3000);
+    //是否玩过游戏
+    localStorage.setItem("IsPlayed", "true");
 };
 app.p23.bind_touch_event = function(){
     $(".p23 .btn-1").on("touchend", function(){
@@ -843,6 +849,8 @@ app.p24.init = function(){
         $(".p24 .e-8").css('display','block');
     }
     setTimeout(show24,3000);
+    //是否玩过游戏
+    localStorage.setItem("IsPlayed", "true");
 };
 app.p24.bind_touch_event = function(){
     $(".p24 .btn-1").on("touchend", function(){
@@ -870,6 +878,8 @@ app.p25.init = function(){
         $(".p25 .e-8").css('display','block');
     }
     setTimeout(show25,3000);
+    //是否玩过游戏
+    localStorage.setItem("IsPlayed", "true");
 };
 app.p25.bind_touch_event = function(){
     $(".p25 .btn-1").on("touchend", function(){
@@ -897,6 +907,8 @@ app.p26.init = function(){
         $(".p26 .e-8").css('display','block');
     }
     setTimeout(show26,3000);
+    //是否玩过游戏
+    localStorage.setItem("IsPlayed", "true");
 };
 app.p26.bind_touch_event = function(){
     $(".p26 .btn-1").on("touchend", function(){
@@ -915,6 +927,46 @@ app.p26.destory = function(){
         "img/p2/e-4-2.png",
         "img/p2/e-7.png"];
     app.template.loader.init(aar,false);
+};
+
+app.ShareOp = function () {
+        var str_title="30s的反应力，测出你的个性！";
+        var str_des="敢不敢花30秒，看看你的真个性？";
+        var str_imgURL="http://www.createcdigital.com/createc-new/eos/img/share1.jpg"
+        if(localStorage.getItem("IsPlayed")=="true" || localStorage.getItem("IsPlayed"))
+        {
+            str_title="你眼中的我是这样的吗？";
+            str_des="来看看我的真个性~";
+            str_imgURL="http://www.createcdigital.com/createc-new/eos/img/share2.jpg"
+        }
+        wx.ready(function () {
+            wx.onMenuShareTimeline({
+                title: str_title, // 分享标题
+                link: 'http://www.createcdigital.com/createc-new/eos/index.php', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                imgUrl: 'http://www.createcdigital.com/createc-new/eos/img/p1/e-1.png', // 分享图标
+                success: function () {
+                    _hmt.push(['_trackEvent', 'pengyouquan', 'fenxiang', 'literature']);
+                },
+                cancel: function () {
+
+                }
+            });
+
+            wx.onMenuShareAppMessage({
+                title: str_title, // 分享标题
+                desc: str_des, // 分享描述
+                link: 'http://www.createcdigital.com/createc-new/eos/index.php', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                imgUrl: 'http://www.createcdigital.com/createc-new/eos/img/p1/e-1.png', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                    _hmt.push(['_trackEvent', 'pengyou', 'fenxiang', 'literature']);
+                },
+                cancel: function () {
+
+                }
+            })
+        });
 };
 
 /*-- GIF src reset
@@ -966,7 +1018,7 @@ fuckandroid.app.p1.bind_touch_event = function(){
     1,2------------>3----->6---->9----->15-------->21
                                 10---->16-------->22
 
-    1,2------------>4----->7---->11----->17-------->23
+    1,2------------>4----->7--->11----->17-------->23
                                 12----->18-------->24
 
     1,2------------>5---->8---->13----->19-------->25

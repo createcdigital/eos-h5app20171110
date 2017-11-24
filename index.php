@@ -400,10 +400,16 @@ $signature = $signPackage["signature"];
             "uploadImage",
         ]
     });
-
+    var str_title="30s的反应力，测出你的个性！";
+    var str_des="这事要是被你碰到了，你会怎么样？";
+    if(localStorage.getItem("IsPlayed")=="true" || localStorage.getItem("IsPlayed"))
+    {
+        str_title="原来这才是我的个性";
+        str_des="30s，如果是你会有什么反应？";
+    }
     wx.ready(function () {
         wx.onMenuShareTimeline({
-            title: 'eos 小彩球为你的人生加戏', // 分享标题
+            title: str_title, // 分享标题
             link: 'http://www.createcdigital.com/createc-new/eos/index.php', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
             imgUrl: 'http://www.createcdigital.com/createc-new/eos/img/p1/e-1.png', // 分享图标
             success: function () {
@@ -415,8 +421,8 @@ $signature = $signPackage["signature"];
         });
 
         wx.onMenuShareAppMessage({
-            title: 'EOS', // 分享标题
-            desc: 'eos 小彩球为你的人生加戏', // 分享描述
+            title: str_title, // 分享标题
+            desc: str_des, // 分享描述
             link: 'http://www.createcdigital.com/createc-new/eos/index.php', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
             imgUrl: 'http://www.createcdigital.com/createc-new/eos/img/p1/e-1.png', // 分享图标
             type: '', // 分享类型,music、video或link，不填默认为link
