@@ -1193,6 +1193,5 @@ fuckandroid.app.p1.bind_touch_event = function(){
     app.p24.bind_touch_event();
     app.p25.bind_touch_event();
     app.p26.bind_touch_event();
-
 })();
 
