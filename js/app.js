@@ -450,7 +450,7 @@ app.p8.init = function(){
 };
 app.p8.bind_touch_event = function(){
     $(".p8 .e-1").on("touchend", function(){
-        app.ChatStr(3,'.p19');
+        app.ChatStr(3,'.p19',false);
         app.template.swiper.to(12);
         $("#p13img").attr("src", $("#p13img").attr("data-src")).removeAttr("data-src");
     });
@@ -659,6 +659,7 @@ app.p14.destory = function(){
 ====================================================== */
 app.p15 = function(){};
 app.p15.init = function(){
+    app.ChatStr(3,'.p15',true);
 };
 app.p15.bind_touch_event = function(){
     $(".p15 .btn-1").on("touchend", function(){
@@ -973,10 +974,10 @@ app.ImgForGif.resetGif=function (index) {
 
 /*-- 聊天对话框
  ====================================================== */
-app.ChatStr =function (num,a) {
+app.ChatStr =function (num,a,others) {
     var a =a;
     //三句话
-    if(num == 3){
+    if(num == 3 && !others ){
         setTimeout(function () {
             $(""+a+" .e-1").fadeIn(2000,function () {
                 $(""+a+" .e-1").fadeOut();
@@ -988,19 +989,32 @@ app.ChatStr =function (num,a) {
         },2000)
     }
     //4句话
-    if(num == 4){
-        setTimeout(function () {
-            $(""+a+" .e-1").fadeIn(2000,function () {
-                $(""+a+" .e-1").fadeOut();
-                $(""+a+" .e-2").fadeIn(2000,function () {
-                    $(""+a+" .e-2").fadeOut();
-                    $(""+a+" .e-3").fadeIn(2000,function () {
-                        $(""+a+" .e-3").fadeOut();
-                        $(""+a+" .e-4").fadeIn(2000);
-                    });
+    if(others ){
+        if(num == 3){
+            setTimeout(function () {
+                $(""+a+" .e-5").fadeIn(2000,function () {
+                    $(""+a+" .e-5").fadeOut();
+                    $(""+a+" .e-6").fadeIn(2000,function () {
+                        $(""+a+" .e-6").fadeOut();
+                        $(""+a+" .e-7").fadeIn(2000);
+                    })
                 })
-            })
-        },2000)
+            },2000)
+        }
+        if(num == 4) {
+            setTimeout(function () {
+                $("" + a + " .e-5").fadeIn(2000, function () {
+                    $("" + a + " .e-5").fadeOut();
+                    $("" + a + " .e-6").fadeIn(2000, function () {
+                        $("" + a + " .e-6").fadeOut();
+                        $("" + a + " .e-6").fadeIn(2000, function () {
+                            $("" + a + " .e-6").fadeOut();
+                            $("" + a + " .e-7").fadeIn(2000);
+                        });
+                    })
+                })
+            }, 2000)
+        }
     }
 };
 
