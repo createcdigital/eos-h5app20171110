@@ -327,10 +327,11 @@ app.p2.destory = function(nextIndex){
         var aar = ["img/p3/e-1.png",
             "img/p3/e-2.png",
             "img/p3/e-3.png",
-            "img/p3/e-4.png",
             "img/p3/e-5.png",
             "img/p3/e-6.png",
-            "img/p3/e-9.png"];
+            "img/p3/e-9.png",
+            "img/p3/e-10.png",
+            "img/p3/e-11.png"];
         app.template.loader.init(aar,false);
     }
     else if(nextIndex==4) {
@@ -347,9 +348,9 @@ app.p2.destory = function(nextIndex){
         var aar = ["img/p5/e-1.png",
             "img/p5/e-2.png",
             "img/p5/e-3.png",
-            "img/p5/e-6.png",
-            "img/p5/e-8.png",
-            "img/p3/e-9.png"];
+            "img/p5/e-4.png",
+            "img/p5/e-5.png",
+            "img/p5/e-6.png"];
         app.template.loader.init(aar,false);
     }
 };
@@ -449,6 +450,7 @@ app.p8.init = function(){
 };
 app.p8.bind_touch_event = function(){
     $(".p8 .e-1").on("touchend", function(){
+        app.ChatStr(3,'.p19');
         app.template.swiper.to(12);
         $("#p13img").attr("src", $("#p13img").attr("data-src")).removeAttr("data-src");
     });
@@ -490,7 +492,18 @@ app.p9.bind_touch_event = function(){
     // });
 };
 app.p9.destory = function(){
-    var aar = ["img/p15/e-1.png","img/p15/e-2.png"];
+    var aar = ["img/p15/e-1.png",
+                "img/p15/e-2.png",
+                "img/p15/e-3.png",
+                "img/p15/e-4.png",
+                "img/p15/e-5.png",
+                "img/p15/e-6.png",
+                "img/p15/e-7.png",
+                "img/p15/e-8.png",
+                "img/p15/e-9.png",
+                "img/p15/e-10.png",
+                "img/p15/e-11.png",
+                "img/p15/e-12.png"];
     app.template.loader.init(aar,false);
 };
 /*-- p10
@@ -512,7 +525,19 @@ app.p10.bind_touch_event = function(){
     // });
 };
 app.p10.destory = function(){
-    var aar = ["img/p16/e-1.png","img/p16/e-2.png"];
+    var aar = ["img/p16/e-1.png",
+        "img/p16/e-2.png",
+        "img/p16/e-3.png",
+        "img/p16/e-4.png",
+        "img/p16/e-5.png",
+        "img/p16/e-6.png",
+        "img/p16/e-7.png",
+        "img/p16/e-8.png",
+        "img/p16/e-9.png",
+        "img/p16/e-10.png",
+        "img/p16/e-11.png",
+        "img/p16/e-12.png",
+        "img/p16/e-13.png"];
     app.template.loader.init(aar,false);
 };
 /*-- p11
@@ -534,7 +559,12 @@ app.p11.bind_touch_event = function(){
     // });
 };
 app.p11.destory = function(){
-    var aar = ["img/p17/e-1.png","img/p17/e-2.png"];
+    var aar = ["img/p17/e-1.png",
+        "img/p17/e-2.png",
+        "img/p17/e-3.png",
+        "img/p17/e-4.png",
+        "img/p17/e-5.png",
+        "img/p17/e-6.png"];
     app.template.loader.init(aar,false);
 };
 /*-- p12
@@ -556,7 +586,11 @@ app.p12.bind_touch_event = function(){
     // });
 };
 app.p12.destory = function(){
-    var aar = ["img/p18/e-1.png","img/p18/e-2.png"];
+    var aar = ["img/p18/e-1.png",
+        "img/p18/e-2.png",
+        "img/p18/e-3.png",
+        "img/p18/e-4.png",
+        "img/p17/e-6.png"];
     app.template.loader.init(aar,false);
 };
 /*-- p13
@@ -578,7 +612,12 @@ app.p13.bind_touch_event = function(){
     // });
 };
 app.p13.destory = function(){
-    var aar = ["img/p19/e-1.png","img/p19/e-2.png"];
+    var aar = ["img/p19/e-1.png",
+        "img/p19/e-2.png",
+        "img/p19/e-3.png",
+        "img/p5/e-4.png",
+        "img/p5/e-6.png",
+        "img/p19/e-4.png"];
     app.template.loader.init(aar,false);
 };
 /*-- p14
@@ -600,7 +639,12 @@ app.p14.bind_touch_event = function(){
     // });
 };
 app.p14.destory = function(){
-    var aar = ["img/p20/e-1.png","img/p20/e-2.png"];
+    var aar = ["img/p20/e-1.png",
+        "img/p20/e-2.png",
+        "img/p20/e-3.png",
+        "img/p5/e-4.png",
+        "img/p5/e-6.png",
+        "img/p19/e-4.png"];
     app.template.loader.init(aar,false);
 };
 
@@ -627,12 +671,7 @@ app.p15.destory = function(){
         "img/p21/e-3.png",
         "img/p21/e-4.png",
         "img/p21/e-5.png",
-        "img/p21/e-6.png",
-        "img/p21/e-9.png",
-        "img/p21/e-10.png",
-        "img/p21/e-11.png",
-        "img/p21/e-12.png",
-        "img/p21/e-13.png"];
+        "img/p21/e-6.png"];
     app.template.loader.init(aar,false);
 };
 /*-- p16
@@ -649,14 +688,9 @@ app.p16.destory = function(){
     var aar = ["img/p22/e-1.png",
         "img/p22/e-2.png",
         "img/p22/e-3.png",
-        "img/p22/e-4.png",
-        "img/p22/e-5.png",
-        "img/p22/e-6.png",
-        "img/p22/e-9.png",
-        "img/p21/e-10.png",
-        "img/p21/e-11.png",
-        "img/p21/e-12.png",
-        "img/p21/e-13.png"];
+        "img/p21/e-4.png",
+        "img/p21/e-5.png",
+        "img/p21/e-6.png"];
     app.template.loader.init(aar,false);
 };
 /*-- p17
@@ -673,12 +707,9 @@ app.p17.destory = function(){
     var aar = ["img/p23/e-1.png",
         "img/p23/e-2.png",
         "img/p23/e-3.png",
-        "img/p23/e-4.png",
-        "img/p23/e-7.png",
-        "img/p21/e-10.png",
-        "img/p21/e-11.png",
-        "img/p21/e-12.png",
-        "img/p21/e-13.png"];
+        "img/p21/e-4.png",
+        "img/p21/e-5.png",
+        "img/p21/e-6.png"];
     app.template.loader.init(aar,false);
 };
 /*-- p18
@@ -695,12 +726,9 @@ app.p18.destory = function(){
     var aar = ["img/p24/e-1.png",
         "img/p24/e-2.png",
         "img/p24/e-3.png",
-        "img/p24/e-4.png",
-        "img/p24/e-7.png",
-        "img/p21/e-10.png",
-        "img/p21/e-11.png",
-        "img/p21/e-12.png",
-        "img/p21/e-13.png"];
+        "img/p21/e-4.png",
+        "img/p21/e-5.png",
+        "img/p21/e-6.png"];
     app.template.loader.init(aar,false);
 };
 /*-- p19
@@ -717,13 +745,9 @@ app.p19.destory = function(){
     var aar = ["img/p25/e-1.png",
         "img/p25/e-2.png",
         "img/p25/e-3.png",
-        "img/p25/e-4.png",
-        "img/p25/e-7.png",
-        "img/p25/e-9.png",
-        "img/p21/e-10.png",
-        "img/p21/e-11.png",
-        "img/p21/e-12.png",
-        "img/p21/e-13.png"];
+        "img/p21/e-4.png",
+        "img/p21/e-5.png",
+        "img/p21/e-6.png"];
     app.template.loader.init(aar,false);
 };
 /*-- p20
@@ -740,12 +764,9 @@ app.p20.destory = function(){
     var aar = ["img/p26/e-1.png",
         "img/p26/e-2.png",
         "img/p26/e-3.png",
-        "img/p26/e-6.png",
-        "img/p26/e-9.png",
-        "img/p21/e-10.png",
-        "img/p21/e-11.png",
-        "img/p21/e-12.png",
-        "img/p21/e-13.png"];
+        "img/p21/e-4.png",
+        "img/p21/e-5.png",
+        "img/p21/e-6.png"];
     app.template.loader.init(aar,false);
 };
 
@@ -757,10 +778,6 @@ app.p20.destory = function(){
  ====================================================== */
 app.p21 = function(){};
 app.p21.init = function(){
-    function show21() {
-        $(".p21 .e-10").css('display','block');
-    }
-    setTimeout(show21,3000);
     //是否玩过游戏
     localStorage.setItem("IsPlayed", "true");
     app.ShareOp();
@@ -787,10 +804,11 @@ app.p21.destory = function(){
  ====================================================== */
 app.p22 = function(){};
 app.p22.init = function(){
-    function show21() {
-        $(".p22 .e-10").css('display','block');
-    }
-    setTimeout(show21,3000);
+    // function show21() {
+    //     $(".p22 .e-10").css('display','block');
+    // }
+    // setTimeout(show21,3000);
+    app.ShareOp();
     //是否玩过游戏
     localStorage.setItem("IsPlayed", "true");
 };
@@ -816,10 +834,7 @@ app.p22.destory = function(){
  ====================================================== */
 app.p23 = function(){};
 app.p23.init = function(){
-    function show23() {
-        $(".p23 .e-8").css('display','block');
-    }
-    setTimeout(show23,3000);
+    app.ShareOp();
     //是否玩过游戏
     localStorage.setItem("IsPlayed", "true");
 };
@@ -845,10 +860,7 @@ app.p23.destory = function(){
  ====================================================== */
 app.p24 = function(){};
 app.p24.init = function(){
-    function show24() {
-        $(".p24 .e-8").css('display','block');
-    }
-    setTimeout(show24,3000);
+    app.ShareOp();
     //是否玩过游戏
     localStorage.setItem("IsPlayed", "true");
 };
@@ -874,10 +886,7 @@ app.p24.destory = function(){
  ====================================================== */
 app.p25 = function(){};
 app.p25.init = function(){
-    function show25() {
-        $(".p25 .e-8").css('display','block');
-    }
-    setTimeout(show25,3000);
+    app.ShareOp();
     //是否玩过游戏
     localStorage.setItem("IsPlayed", "true");
 };
@@ -903,10 +912,7 @@ app.p25.destory = function(){
  ====================================================== */
 app.p26 = function(){};
 app.p26.init = function(){
-    function show26() {
-        $(".p26 .e-8").css('display','block');
-    }
-    setTimeout(show26,3000);
+    app.ShareOp();
     //是否玩过游戏
     localStorage.setItem("IsPlayed", "true");
 };
@@ -930,43 +936,43 @@ app.p26.destory = function(){
 };
 
 app.ShareOp = function () {
-        var str_title="30s的反应力，测出你的个性！";
-        var str_des="敢不敢花30秒，看看你的真个性？";
-        var str_imgURL="http://www.createcdigital.com/createc-new/eos/img/share1.jpg"
-        if(localStorage.getItem("IsPlayed")=="true" || localStorage.getItem("IsPlayed"))
-        {
-            str_title="你眼中的我是这样的吗？";
-            str_des="来看看我的真个性~";
-            str_imgURL="http://www.createcdigital.com/createc-new/eos/img/share2.jpg"
-        }
-        wx.ready(function () {
-            wx.onMenuShareTimeline({
-                title: str_title, // 分享标题
-                link: 'http://www.createcdigital.com/createc-new/eos/index.php', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-                imgUrl: 'http://www.createcdigital.com/createc-new/eos/img/p1/e-1.png', // 分享图标
-                success: function () {
-                    _hmt.push(['_trackEvent', 'pengyouquan', 'fenxiang', 'literature']);
-                },
-                cancel: function () {
-
-                }
-            });
-
-            wx.onMenuShareAppMessage({
-                title: str_title, // 分享标题
-                desc: str_des, // 分享描述
-                link: 'http://www.createcdigital.com/createc-new/eos/index.php', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-                imgUrl: 'http://www.createcdigital.com/createc-new/eos/img/p1/e-1.png', // 分享图标
-                type: '', // 分享类型,music、video或link，不填默认为link
-                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-                success: function () {
-                    _hmt.push(['_trackEvent', 'pengyou', 'fenxiang', 'literature']);
-                },
-                cancel: function () {
-
-                }
-            })
-        });
+    var str_title="30s的反应力，测出你的个性！";
+    var str_des="敢不敢花30秒，看看你的真个性？";
+    var str_imgURL="http://www.createcdigital.com/createc-new/eos/img/share1.jpg"
+    if(localStorage.getItem("IsPlayed")=="true" || localStorage.getItem("IsPlayed"))
+    {
+        str_title="你眼中的我是这样的吗？";
+        str_des="来看看我的真个性~";
+        str_imgURL="http://www.createcdigital.com/createc-new/eos/img/share2.jpg"
+    }
+    // wx.ready(function () {
+    //     wx.onMenuShareTimeline({
+    //         title: str_title, // 分享标题
+    //         link: 'http://www.createcdigital.com/createc-new/eos/index.php', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+    //         imgUrl: 'http://www.createcdigital.com/createc-new/eos/img/p1/e-1.png', // 分享图标
+    //         success: function () {
+    //             _hmt.push(['_trackEvent', 'pengyouquan', 'fenxiang', 'literature']);
+    //         },
+    //         cancel: function () {
+    //
+    //         }
+    //     });
+    //
+    //     wx.onMenuShareAppMessage({
+    //         title: str_title, // 分享标题
+    //         desc: str_des, // 分享描述
+    //         link: 'http://www.createcdigital.com/createc-new/eos/index.php', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+    //         imgUrl: 'http://www.createcdigital.com/createc-new/eos/img/p1/e-1.png', // 分享图标
+    //         type: '', // 分享类型,music、video或link，不填默认为link
+    //         dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+    //         success: function () {
+    //             _hmt.push(['_trackEvent', 'pengyou', 'fenxiang', 'literature']);
+    //         },
+    //         cancel: function () {
+    //
+    //         }
+    //     })
+    //});
 };
 
 /*-- GIF src reset
@@ -976,6 +982,38 @@ app.ImgForGif.resetGif=function (index) {
     $("#p"+index+"img").attr("data-src", $("#p"+index+"img").attr("src")).removeAttr("src");
 };
 
+/*-- 聊天对话框
+ ====================================================== */
+app.ChatStr =function (num,a) {
+    var a =a;
+    //三句话
+    if(num == 3){
+        setTimeout(function () {
+            $(""+a+" .e-1").fadeIn(2000,function () {
+                $(""+a+" .e-1").fadeOut();
+                $(""+a+" .e-2").fadeIn(2000,function () {
+                    $(""+a+" .e-2").fadeOut();
+                    $(""+a+" .e-3").fadeIn(2000);
+                })
+            })
+        },2000)
+    }
+    //4句话
+    if(num == 4){
+        setTimeout(function () {
+            $(""+a+" .e-1").fadeIn(2000,function () {
+                $(""+a+" .e-1").fadeOut();
+                $(""+a+" .e-2").fadeIn(2000,function () {
+                    $(""+a+" .e-2").fadeOut();
+                    $(""+a+" .e-3").fadeIn(2000,function () {
+                        $(""+a+" .e-3").fadeOut();
+                        $(""+a+" .e-4").fadeIn(2000);
+                    });
+                })
+            })
+        },2000)
+    }
+};
 
 /*-- for android
 ====================================================== */
