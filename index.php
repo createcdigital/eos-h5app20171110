@@ -411,7 +411,7 @@ $signature = $signPackage["signature"];
         wx.onMenuShareTimeline({
             title: str_title, // 分享标题
             link: 'http://www.createcdigital.com/createc-new/eos/index.php', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-            imgUrl: 'http://www.createcdigital.com/createc-new/eos/img/p1/e-1.png', // 分享图标
+            imgUrl: 'http://www.createcdigital.com/createc-new/eos/img/share2.jpg', // 分享图标
             success: function () {
                 _hmt.push(['_trackEvent', 'pengyouquan', 'fenxiang', 'literature']);
             },
@@ -424,7 +424,7 @@ $signature = $signPackage["signature"];
             title: str_title, // 分享标题
             desc: str_des, // 分享描述
             link: 'http://www.createcdigital.com/createc-new/eos/index.php', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-            imgUrl: 'http://www.createcdigital.com/createc-new/eos/img/p1/e-1.png', // 分享图标
+            imgUrl: 'http://www.createcdigital.com/createc-new/eos/img/share2.jpg', // 分享图标
             type: '', // 分享类型,music、video或link，不填默认为link
             dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
             success: function () {

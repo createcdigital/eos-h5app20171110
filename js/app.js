@@ -786,7 +786,6 @@ app.p21.bind_touch_event = function(){
     $(".p21 .btn-1").on("touchend", function(){
         app.template.swiper.to(1);
         app.ImgForGif.resetGif(9);
-        $(".p21 .e-10").css('display','none');
     });
     $(".p21 .btn-3").on("touchend", function(){
         window.location.href="http://yhg111.ren/iDif98";
@@ -804,10 +803,6 @@ app.p21.destory = function(){
  ====================================================== */
 app.p22 = function(){};
 app.p22.init = function(){
-    // function show21() {
-    //     $(".p22 .e-10").css('display','block');
-    // }
-    // setTimeout(show21,3000);
     app.ShareOp();
     //是否玩过游戏
     localStorage.setItem("IsPlayed", "true");
@@ -816,7 +811,6 @@ app.p22.bind_touch_event = function(){
     $(".p22 .btn-1").on("touchend", function(){
         app.template.swiper.to(1);
         app.ImgForGif.resetGif(10);
-        $(".p22 .e-10").css('display','none');
     });
     $(".p22 .btn-3").on("touchend", function(){
         window.location.href="http://yhg111.ren/iDif98";
@@ -842,7 +836,6 @@ app.p23.bind_touch_event = function(){
     $(".p23 .btn-1").on("touchend", function(){
         app.template.swiper.to(1);
         app.ImgForGif.resetGif(11);
-        $(".p23 .e-8").css('display','none');
     });
     $(".p23 .btn-3").on("touchend", function(){
         window.location.href="http://yhg111.ren/iDif98";
@@ -868,7 +861,6 @@ app.p24.bind_touch_event = function(){
     $(".p24 .btn-1").on("touchend", function(){
         app.template.swiper.to(1);
         app.ImgForGif.resetGif(12);
-        $(".p24 .e-8").css('display','none');
     });
     $(".p24 .btn-3").on("touchend", function(){
         window.location.href="http://yhg111.ren/iDif98";
@@ -894,7 +886,6 @@ app.p25.bind_touch_event = function(){
     $(".p25 .btn-1").on("touchend", function(){
         app.template.swiper.to(1);
         app.ImgForGif.resetGif(13);
-        $(".p25 .e-8").css('display','none');
     });
     $(".p25 .btn-3").on("touchend", function(){
         window.location.href="http://yhg111.ren/iDif98";
@@ -920,7 +911,6 @@ app.p26.bind_touch_event = function(){
     $(".p26 .btn-1").on("touchend", function(){
         app.template.swiper.to(1);
         app.ImgForGif.resetGif(14);
-        $(".p26 .e-8").css('display','none');
     });
     $(".p26 .btn-3").on("touchend", function(){
         window.location.href="http://yhg111.ren/iDif98";
@@ -938,7 +928,6 @@ app.p26.destory = function(){
 app.ShareOp = function () {
     var str_title="30s的反应力，测出你的个性！";
     var str_des="敢不敢花30秒，看看你的真个性？";
-    var str_imgURL="http://www.createcdigital.com/createc-new/eos/img/share1.jpg"
     if(localStorage.getItem("IsPlayed")=="true" || localStorage.getItem("IsPlayed"))
     {
         str_title="你眼中的我是这样的吗？";
@@ -949,7 +938,7 @@ app.ShareOp = function () {
     //     wx.onMenuShareTimeline({
     //         title: str_title, // 分享标题
     //         link: 'http://www.createcdigital.com/createc-new/eos/index.php', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-    //         imgUrl: 'http://www.createcdigital.com/createc-new/eos/img/p1/e-1.png', // 分享图标
+    //         imgUrl: 'http://www.createcdigital.com/createc-new/eos/img/share2.jpg', // 分享图标
     //         success: function () {
     //             _hmt.push(['_trackEvent', 'pengyouquan', 'fenxiang', 'literature']);
     //         },
@@ -962,7 +951,7 @@ app.ShareOp = function () {
     //         title: str_title, // 分享标题
     //         desc: str_des, // 分享描述
     //         link: 'http://www.createcdigital.com/createc-new/eos/index.php', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-    //         imgUrl: 'http://www.createcdigital.com/createc-new/eos/img/p1/e-1.png', // 分享图标
+    //         imgUrl: 'http://www.createcdigital.com/createc-new/eos/img/share2.jpg', // 分享图标
     //         type: '', // 分享类型,music、video或link，不填默认为link
     //         dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
     //         success: function () {
