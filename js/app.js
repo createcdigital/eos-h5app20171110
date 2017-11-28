@@ -27,7 +27,7 @@ app.template.loader.init= function(paraArrary,isFirst){
 
     new mo.Loader(getSource(),{
         loadType : 1,
-        minTime : 300,
+        minTime : 30,
         onLoading : function(count,total){
             console.log('onloading:single loaded:',arguments)
             if(isFirst)
@@ -92,6 +92,9 @@ app.template.swiper.bind = function(){
             app.template.swiper.mySwiper.lockSwipes();
         }
     });
+    if(share){
+        app.template.swiper.mySwiper.slideTo(share,100,true);
+    }
 
     app.template.swiper.lock();
 };
@@ -225,6 +228,23 @@ app.audio.show = function(){
     $(".audio-icon").css({"display": "block"});
     $(".audio-icon").addClass("audio-icon-animation");
     app.audio.play();
+    //ios端自动播放音乐
+    function audioAutoPlay(id){
+        var audio = document.getElementById(id),
+            play = function(){
+                audio.play();
+                document.removeEventListener("touchstart",play, false);
+            };
+        audio.play();
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            play();
+        }, false);
+        document.addEventListener('YixinJSBridgeReady', function() {
+            play();
+        }, false);
+        document.addEventListener("touchstart",play, false);
+    }
+    audioAutoPlay('audio-player');
 };
 
 app.audio.play = function(){
@@ -281,6 +301,7 @@ app.p1.destory = function(){
         "img/p2/e-4-2.png",
         "img/p2/e-7.png"];
     app.template.loader.init(aar,false);
+    $(".p2").css("background-image","url(img/p2/p2.jpg)");
 };
 
 
@@ -333,6 +354,7 @@ app.p2.destory = function(nextIndex){
             "img/p3/e-10.png",
             "img/p3/e-11.png"];
         app.template.loader.init(aar,false);
+        $(".p3").css("background-image","url(img/p3/p3.jpg)");
     }
     else if(nextIndex==4) {
         var aar = ["img/p4/e-1.png",
@@ -343,6 +365,7 @@ app.p2.destory = function(nextIndex){
             "img/p4/e-6.png",
             "img/p3/e-9.png"];
         app.template.loader.init(aar,false);
+        $(".p4").css("background-image","url(img/p4/p4.jpg)");
     }else if(nextIndex==5)
     {
         var aar = ["img/p5/e-1.png",
@@ -352,6 +375,7 @@ app.p2.destory = function(nextIndex){
             "img/p5/e-5.png",
             "img/p5/e-6.png"];
         app.template.loader.init(aar,false);
+        $(".p5").css("background-image","url(img/p5/p5.jpg)");
     }
 };
 /*-- p3
@@ -365,6 +389,7 @@ app.p3.bind_touch_event = function(){
     });
 };
 app.p3.destory = function(){
+    $(".p6").css("background-image","url(img/p6/p6.jpg)");
 };
 /*-- p4
 ====================================================== */
@@ -377,6 +402,7 @@ app.p4.bind_touch_event = function(){
     });
 };
 app.p4.destory = function(){
+    $(".p7").css("background-image","url(img/p7/p7.jpg)");
 };
 /*-- p5
 ====================================================== */
@@ -389,6 +415,7 @@ app.p5.bind_touch_event = function(){
     });
 };
 app.p5.destory = function(){
+    $(".p8").css("background-image","url(img/p8/p8.jpg)");
 };
 /*-- p6
 ====================================================== */
@@ -455,6 +482,7 @@ app.p8.bind_touch_event = function(){
         $("#p13img").attr("src", $("#p13img").attr("data-src")).removeAttr("data-src");
     });
     $(".p8 .e-2").on("touchend", function(){
+        app.ChatStr(3,'.p20',false);
         app.template.swiper.to(13);
         $("#p14img").attr("src", $("#p14img").attr("data-src")).removeAttr("data-src");
     });
@@ -505,6 +533,7 @@ app.p9.destory = function(){
                 "img/p15/e-11.png",
                 "img/p15/e-12.png"];
     app.template.loader.init(aar,false);
+    $(".p15").css("background-image","url(img/p15/p15.jpg)");
 };
 /*-- p10
  ====================================================== */
@@ -539,6 +568,7 @@ app.p10.destory = function(){
         "img/p16/e-12.png",
         "img/p16/e-13.png"];
     app.template.loader.init(aar,false);
+    $(".p16").css("background-image","url(img/p16/p16.jpg)");
 };
 /*-- p11
  ====================================================== */
@@ -566,6 +596,7 @@ app.p11.destory = function(){
         "img/p17/e-5.png",
         "img/p17/e-6.png"];
     app.template.loader.init(aar,false);
+    $(".p17").css("background-image","url(img/p17/p17.jpg)");
 };
 /*-- p12
  ====================================================== */
@@ -592,6 +623,7 @@ app.p12.destory = function(){
         "img/p18/e-4.png",
         "img/p17/e-6.png"];
     app.template.loader.init(aar,false);
+    $(".p18").css("background-image","url(img/p18/p18.jpg)");
 };
 /*-- p13
  ====================================================== */
@@ -619,6 +651,7 @@ app.p13.destory = function(){
         "img/p5/e-6.png",
         "img/p19/e-4.png"];
     app.template.loader.init(aar,false);
+    $(".p19").css("background-image","url(img/p19/p19.jpg)");
 };
 /*-- p14
  ====================================================== */
@@ -646,6 +679,7 @@ app.p14.destory = function(){
         "img/p5/e-6.png",
         "img/p19/e-4.png"];
     app.template.loader.init(aar,false);
+    $(".p20").css("background-image","url(img/p20/p20.jpg)");
 };
 
 
@@ -674,11 +708,13 @@ app.p15.destory = function(){
         "img/p21/e-5.png",
         "img/p21/e-6.png"];
     app.template.loader.init(aar,false);
+    $(".p21").css("background-image","url(img/p21/p21.jpg)");
 };
 /*-- p16
 ====================================================== */
 app.p16 = function(){};
 app.p16.init = function(){
+    app.ChatStr(4,'.p16',true);
 };
 app.p16.bind_touch_event = function(){
     $(".p16 .btn-1").on("touchend", function(){
@@ -693,6 +729,7 @@ app.p16.destory = function(){
         "img/p21/e-5.png",
         "img/p21/e-6.png"];
     app.template.loader.init(aar,false);
+    $(".p22").css("background-image","url(img/p22/p22.jpg)");
 };
 /*-- p17
 ====================================================== */
@@ -712,6 +749,7 @@ app.p17.destory = function(){
         "img/p21/e-5.png",
         "img/p21/e-6.png"];
     app.template.loader.init(aar,false);
+    $(".p23").css("background-image","url(img/p23/p23.jpg)");
 };
 /*-- p18
 ====================================================== */
@@ -731,6 +769,7 @@ app.p18.destory = function(){
         "img/p21/e-5.png",
         "img/p21/e-6.png"];
     app.template.loader.init(aar,false);
+    $(".p24").css("background-image","url(img/p24/p24.jpg)");
 };
 /*-- p19
 ====================================================== */
@@ -750,6 +789,7 @@ app.p19.destory = function(){
         "img/p21/e-5.png",
         "img/p21/e-6.png"];
     app.template.loader.init(aar,false);
+    $(".p25").css("background-image","url(img/p25/p25.jpg)");
 };
 /*-- p20
 ====================================================== */
@@ -769,6 +809,7 @@ app.p20.destory = function(){
         "img/p21/e-5.png",
         "img/p21/e-6.png"];
     app.template.loader.init(aar,false);
+    $(".p26").css("background-image","url(img/p26/p26.jpg)");
 };
 
 
@@ -779,15 +820,27 @@ app.p20.destory = function(){
  ====================================================== */
 app.p21 = function(){};
 app.p21.init = function(){
-    //是否玩过游戏
-    localStorage.setItem("IsPlayed", "true");
-    app.ShareOp();
+    if(!share){
+        app.ShareOp(20);
+    }else {
+        $(".divbottom").hide();
+        $(".divbottom2").show();
+    }
 };
 app.p21.bind_touch_event = function(){
     $(".p21 .btn-1").on("touchend", function(){
-        app.template.swiper.to(1);
-        app.ImgForGif.resetGif(9);
+        if($(this).attr('flag') == 1){
+            window.location.href = 'http://www.createcdigital.com/createc-new/eos/index.php';
+        }else {
+            app.template.swiper.to(1);
+            app.ImgForGif.resetGif(9);
+        }
     });
+
+    $("#p21-btn2").on("touchend", function(){
+        window.location.href="http://yhg111.ren/iDif98";
+    });
+
     $(".p21 .btn-3").on("touchend", function(){
         window.location.href="http://yhg111.ren/iDif98";
     });
@@ -804,15 +857,27 @@ app.p21.destory = function(){
  ====================================================== */
 app.p22 = function(){};
 app.p22.init = function(){
-    app.ShareOp();
-    //是否玩过游戏
-    localStorage.setItem("IsPlayed", "true");
+    if(!share){
+        app.ShareOp(21);
+    }else {
+        $(".divbottom").hide();
+        $(".divbottom2").show();
+    }
 };
 app.p22.bind_touch_event = function(){
     $(".p22 .btn-1").on("touchend", function(){
-        app.template.swiper.to(1);
-        app.ImgForGif.resetGif(10);
+        if($(this).attr('flag') == 1){
+            window.location.href = 'http://www.createcdigital.com/createc-new/eos/index.php';
+        }else {
+            app.template.swiper.to(1);
+            app.ImgForGif.resetGif(10);
+        }
     });
+
+    $("#p22-btn2").on("touchend", function(){
+        window.location.href="http://yhg111.ren/iDif98";
+    });
+
     $(".p22 .btn-3").on("touchend", function(){
         window.location.href="http://yhg111.ren/iDif98";
     });
@@ -829,15 +894,27 @@ app.p22.destory = function(){
  ====================================================== */
 app.p23 = function(){};
 app.p23.init = function(){
-    app.ShareOp();
-    //是否玩过游戏
-    localStorage.setItem("IsPlayed", "true");
+    if(!share){
+        app.ShareOp(22);
+    }else {
+        $(".divbottom").hide();
+        $(".divbottom2").show();
+    }
 };
 app.p23.bind_touch_event = function(){
     $(".p23 .btn-1").on("touchend", function(){
-        app.template.swiper.to(1);
-        app.ImgForGif.resetGif(11);
+        if($(this).attr('flag') == 1){
+            window.location.href = 'http://www.createcdigital.com/createc-new/eos/index.php';
+        }else {
+            app.template.swiper.to(1);
+            app.ImgForGif.resetGif(11);
+        }
     });
+
+    $("#p23-btn2").on("touchend", function(){
+        window.location.href="http://yhg111.ren/iDif98";
+    });
+
     $(".p23 .btn-3").on("touchend", function(){
         window.location.href="http://yhg111.ren/iDif98";
     });
@@ -854,15 +931,27 @@ app.p23.destory = function(){
  ====================================================== */
 app.p24 = function(){};
 app.p24.init = function(){
-    app.ShareOp();
-    //是否玩过游戏
-    localStorage.setItem("IsPlayed", "true");
+    if(!share){
+        app.ShareOp(23);
+    }else {
+        $(".divbottom").hide();
+        $(".divbottom2").show();
+    }
 };
 app.p24.bind_touch_event = function(){
     $(".p24 .btn-1").on("touchend", function(){
-        app.template.swiper.to(1);
-        app.ImgForGif.resetGif(12);
+        if($(this).attr('flag') == 1){
+            window.location.href = 'http://www.createcdigital.com/createc-new/eos/index.php';
+        }else {
+            app.template.swiper.to(1);
+            app.ImgForGif.resetGif(12);
+        }
     });
+
+    $("#p24-btn2").on("touchend", function(){
+        window.location.href="http://yhg111.ren/iDif98";
+    });
+
     $(".p24 .btn-3").on("touchend", function(){
         window.location.href="http://yhg111.ren/iDif98";
     });
@@ -879,15 +968,28 @@ app.p24.destory = function(){
  ====================================================== */
 app.p25 = function(){};
 app.p25.init = function(){
-    app.ShareOp();
-    //是否玩过游戏
-    localStorage.setItem("IsPlayed", "true");
+    if(!share){
+        app.ShareOp(24);
+    }else {
+        $(".divbottom").hide();
+        $(".divbottom2").show();
+    }
 };
 app.p25.bind_touch_event = function(){
     $(".p25 .btn-1").on("touchend", function(){
-        app.template.swiper.to(1);
-        app.ImgForGif.resetGif(13);
+        if($(this).attr('flag') == 1){
+            window.location.href = 'http://www.createcdigital.com/createc-new/eos/index.php';
+        }else {
+            app.template.swiper.to(1);
+            app.ImgForGif.resetGif(13);
+        }
+        
     });
+
+    $("#p25-btn2").on("touchend", function(){
+        window.location.href="http://yhg111.ren/iDif98";
+    });
+
     $(".p25 .btn-3").on("touchend", function(){
         window.location.href="http://yhg111.ren/iDif98";
     });
@@ -904,15 +1006,27 @@ app.p25.destory = function(){
  ====================================================== */
 app.p26 = function(){};
 app.p26.init = function(){
-    app.ShareOp();
-    //是否玩过游戏
-    localStorage.setItem("IsPlayed", "true");
+    if(!share){
+        app.ShareOp(25);
+    }else {
+        $(".divbottom").hide();
+        $(".divbottom2").show();
+    }
 };
 app.p26.bind_touch_event = function(){
     $(".p26 .btn-1").on("touchend", function(){
-        app.template.swiper.to(1);
-        app.ImgForGif.resetGif(14);
+        if($(this).attr('flag') == 1){
+            window.location.href = 'http://www.createcdigital.com/createc-new/eos/index.php';
+        }else {
+            app.template.swiper.to(1);
+            app.ImgForGif.resetGif(14);
+        }
     });
+
+    $("#p26-btn2").on("touchend", function(){
+        window.location.href="http://yhg111.ren/iDif98";
+    });
+
     $(".p26 .btn-3").on("touchend", function(){
         window.location.href="http://yhg111.ren/iDif98";
     });
@@ -926,43 +1040,38 @@ app.p26.destory = function(){
     app.template.loader.init(aar,false);
 };
 
-app.ShareOp = function () {
-    var str_title="30s的反应力，测出你的个性！";
-    var str_des="敢不敢花30秒，看看你的真个性？";
-    if(localStorage.getItem("IsPlayed")=="true" || localStorage.getItem("IsPlayed"))
-    {
-        str_title="你眼中的我是这样的吗？";
-        str_des="来看看我的真个性~";
-        str_imgURL="http://www.createcdigital.com/createc-new/eos/img/share2.jpg"
-    }
-    // wx.ready(function () {
-    //     wx.onMenuShareTimeline({
-    //         title: str_title, // 分享标题
-    //         link: 'http://www.createcdigital.com/createc-new/eos/index.php', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-    //         imgUrl: 'http://www.createcdigital.com/createc-new/eos/img/share2.jpg', // 分享图标
-    //         success: function () {
-    //             _hmt.push(['_trackEvent', 'pengyouquan', 'fenxiang', 'literature']);
-    //         },
-    //         cancel: function () {
-    //
-    //         }
-    //     });
-    //
-    //     wx.onMenuShareAppMessage({
-    //         title: str_title, // 分享标题
-    //         desc: str_des, // 分享描述
-    //         link: 'http://www.createcdigital.com/createc-new/eos/index.php', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-    //         imgUrl: 'http://www.createcdigital.com/createc-new/eos/img/share2.jpg', // 分享图标
-    //         type: '', // 分享类型,music、video或link，不填默认为link
-    //         dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-    //         success: function () {
-    //             _hmt.push(['_trackEvent', 'pengyou', 'fenxiang', 'literature']);
-    //         },
-    //         cancel: function () {
-    //
-    //         }
-    //     })
-    //});
+app.ShareOp = function (num) {
+    var str_title="你眼中的我是这样的吗？";
+    var str_des="你是我的塑料姐妹花？还是热血真老铁？";
+    var str_imgURL="http://www.createcdigital.com/createc-new/eos/img/share2.jpg"
+    wx.ready(function () {
+        wx.onMenuShareTimeline({
+            title: str_title, // 分享标题
+            link: 'http://www.createcdigital.com/createc-new/eos/index.php?share='+num+'', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+            imgUrl: 'http://www.createcdigital.com/createc-new/eos/img/share2.jpg', // 分享图标
+            success: function () {
+                 _hmt.push(['_trackEvent', 'pengyouquan', 'fenxiang', 'literature']);
+            },
+            cancel: function () {
+
+            }
+        });
+
+        wx.onMenuShareAppMessage({
+            title: str_title, // 分享标题
+            desc: str_des, // 分享描述
+            link: 'http://www.createcdigital.com/createc-new/eos/index.php?share='+num+'', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+            imgUrl: 'http://www.createcdigital.com/createc-new/eos/img/share2.jpg', // 分享图标
+            type: '', // 分享类型,music、video或link，不填默认为link
+            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+            success: function () {
+                 _hmt.push(['_trackEvent', 'pengyou', 'fenxiang', 'literature']);
+            },
+            cancel: function () {
+
+            }
+        })
+    });
 };
 
 /*-- GIF src reset
@@ -978,45 +1087,71 @@ app.ChatStr =function (num,a,others) {
     var a =a;
     //三句话
     if(num == 3 && !others ){
-        setTimeout(function () {
-            $(""+a+" .e-1").fadeIn(2000,function () {
-                $(""+a+" .e-1").fadeOut();
-                $(""+a+" .e-2").fadeIn(2000,function () {
-                    $(""+a+" .e-2").fadeOut();
-                    $(""+a+" .e-3").fadeIn(2000);
+        if(a==".p20")
+        {
+            $(""+a+" .e-3").hide();
+            setTimeout(function () {
+                $(""+a+" .e-1").fadeIn(3000,function () {
+                    $(""+a+" .e-1").fadeOut();
+                    $(""+a+" .e-2").fadeIn(3000,function () {
+                        $(""+a+" .e-2").fadeOut();
+                        $(""+a+" .e-3").fadeIn(3000)
+                        $(""+a+" .e-6").fadeIn(3000)
+                    })
                 })
-            })
-        },2000)
+            },3000)
+        }else
+        {
+            $(""+a+" .e-3").hide();
+            setTimeout(function () {
+                $(""+a+" .e-1").fadeIn(3000,function () {
+                    $(""+a+" .e-1").fadeOut();
+                    $(""+a+" .e-2").fadeIn(3000,function () {
+                        $(""+a+" .e-2").fadeOut();
+                        $(""+a+" .e-3").fadeIn(3000)
+                    })
+                })
+            },3000)
+        }
+
     }
     //4句话
     if(others ){
         if(num == 3){
+            $(""+a+" .e-7").hide();
             setTimeout(function () {
-                $(""+a+" .e-5").fadeIn(2000,function () {
+                $(""+a+" .e-5").fadeIn(3000,function () {
                     $(""+a+" .e-5").fadeOut();
-                    $(""+a+" .e-6").fadeIn(2000,function () {
+                    $(""+a+" .e-6").fadeIn(3000,function () {
                         $(""+a+" .e-6").fadeOut();
-                        $(""+a+" .e-7").fadeIn(2000);
+                        $(""+a+" .e-7").fadeIn(3000)
                     })
                 })
-            },2000)
+            },3000)
         }
         if(num == 4) {
             setTimeout(function () {
-                $("" + a + " .e-5").fadeIn(2000, function () {
-                    $("" + a + " .e-5").fadeOut();
-                    $("" + a + " .e-6").fadeIn(2000, function () {
-                        $("" + a + " .e-6").fadeOut();
-                        $("" + a + " .e-6").fadeIn(2000, function () {
-                            $("" + a + " .e-6").fadeOut();
-                            $("" + a + " .e-7").fadeIn(2000);
+                $(""+a+" .e-8").hide();
+                $(""+a+" .e-5").fadeIn(3000, function () {
+                    console.log(2);
+                    $(""+ a +" .e-5").fadeOut();
+                    $(""+ a +" .e-6").fadeIn(3000, function () {
+                        console.log(3);
+                        $(""+ a +" .e-6").fadeOut();
+                        $(""+ a +" .e-7").fadeIn(3000, function () {
+                            console.log(4);
+                            $(""+ a +" .e-7").fadeOut();
+                            $(""+ a +" .e-8").fadeIn(3000)
                         });
                     })
                 })
-            }, 2000)
+            }, 3000)
         }
     }
 };
+
+
+
 
 /*-- for android
 ====================================================== */
@@ -1050,9 +1185,10 @@ fuckandroid.app.p1.bind_touch_event = function(){
     app.template.touch.init();
     app.template.swiper.init();
     app.template.loader.init(aar,true);
-    app.template.Landscape.init();
-    //app.audio.init();
-    //tracking.pv_byfrom();
+    // app.template.Landscape.init();
+    app.audio.init();
+    app.audio.show();
+    // tracking.pv_byfrom();
 
 
     /*   页面切换逻辑顺序图
@@ -1177,6 +1313,9 @@ fuckandroid.app.p1.bind_touch_event = function(){
     /* page init */
     app.p1.init();
 
+
+
+
     //点击事件初始化
     app.p1.bind_touch_event();
     app.p2.bind_touch_event();
@@ -1208,4 +1347,3 @@ fuckandroid.app.p1.bind_touch_event = function(){
     app.p25.bind_touch_event();
     app.p26.bind_touch_event();
 })();
-
